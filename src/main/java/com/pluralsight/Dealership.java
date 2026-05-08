@@ -8,7 +8,7 @@ public class Dealership {
     private String name;
     private String address;
     private String phone;
-    private List<Vehicle> inventory = new ArrayList<>();
+    private ArrayList<Vehicle> inventory;
 
     //Constructor
 
@@ -44,4 +44,21 @@ public class Dealership {
     public void setPhone(String phone) {
         this.phone = phone;
     }
+    // Methods
+    public List<Vehicle> getVehiclesByPrice(double min, double max){
+        return inventory;
+    }
+    public List<Vehicle> getVehicleByMileage(int min, int max){ return  null;}
+    public List<Vehicle> getVehicleByYear(int min, int max){return  null;}
+    public List<Vehicle> getVehicleByMakeModel(String make, String model){return null;}
+    public List<Vehicle> getVehicleByColor(String color){return null;}
+    public List<Vehicle> getVehicleByType(String vehicleType){return null;}
+    public List<Vehicle> getAllVehicles(){
+        return inventory;
+    }
+    // Helper Methods
+    public void addVehicle(Vehicle vehicle){
+        inventory.add(vehicle);
+    }
+    public void removeVehicle(Vehicle vehicle){}
 }

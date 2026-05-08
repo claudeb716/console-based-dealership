@@ -1,5 +1,6 @@
 package com.pluralsight;
 
+
 public class Vehicle {
     // Attributes
     private int vin;
@@ -88,4 +89,5 @@ public class Vehicle {
     public void setPrice(double price) {
         this.price = price;
     }
+
 }
