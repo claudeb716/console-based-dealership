@@ -1,15 +1,18 @@
 # Project Title
+Object Oriented Car Dealership 
 
 ## Description of the Project
 
-Briefly describe what this Java console application does. Mention its purpose and who the intended users are. Explain the main functionality and what problems it aims to solve.
-
+I built a mini console-based dealership application designed to sit on the desk of a sales manager at a car dealership.
+The user can filter vehicles by type or view all, add or remove a vehicle from the inventory, and finally, quit the application.
 ## User Stories
 
 List the user stories that guided the development of your application. Format these stories as: "As a [type of user], I want [some goal] so that [some reason]."
 
-- As a user, I want to be able to input my data, so that the application can process it accordingly.
-- As a user, I want to receive immediate feedback, so I can understand what to do next.
+- As a Customer, I want to view and filter the dealership's vehicle inventory by type, so that I can quickly find the category of car I am looking for.
+
+- PlaceHolder
+- PlacerHolder
 
 ## Setup
 
@@ -32,7 +35,7 @@ Follow these steps to get your application running within IntelliJ IDEA:
 
 ## Technologies Used
 
-- Java: Mention the version you are using.
+- Java: 7
 - Any additional libraries or frameworks used in the project.
 
 ## Demo
@@ -45,7 +48,8 @@ Include screenshots or GIFs that show your application in action. Use tools like
 
 Outline potential future enhancements or functionalities you might consider adding:
 
-- Additional feature to be developed.
+- Additional feature to be developed where we allow users to have access to more than one Dealership.
+- 
 - Improvement of current functionalities.
 
 ## Resources
@@ -57,13 +61,13 @@ List resources such as tutorials, articles, or documentation that helped you dur
 
 ## Team Members
 
-- **Name 1** - Specific contributions or roles.
-- **Name 2** - Specific contributions or roles.
+- **Claude** - Software Developer
+
 
 ## Thanks
 
 Express gratitude towards those who provided help, guidance, or resources:
 
-- Thank you to [Mentor's Name] for continuous support and guidance.
+- Thank you to Raymond Maroun for continuous support and guidance.
 - A special thanks to all teammates for their dedication and teamwork.
  
