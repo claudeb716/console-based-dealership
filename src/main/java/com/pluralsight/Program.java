@@ -2,12 +2,7 @@ package com.pluralsight;
 
 import java.util.Scanner;
 
-public class VehicleInventory {
-    // Initialize an array of Vehicle objects with a maximum size of 20.
-    private static Vehicle[] vehicles = new Vehicle[20];
-
-    // The number of vehicles currently stored in the vehicles array.
-    private static int numVehicles = 6;
+public class Program {
 
     // This is the main method where the program execution starts.
     public static void main(String[] args) {
@@ -22,12 +17,15 @@ public class VehicleInventory {
 
             // Display the options menu to the user.
             System.out.println("What do you want to do?");
-            System.out.println("  1 - List all vehicles");
-            System.out.println("  2 - Search by make/model");
-            System.out.println("  3 - Search by price range");
-            System.out.println("  4 - Search by color");
-            System.out.println("  5 - Add a vehicle");
-            System.out.println("  6 - Quit");
+            System.out.println("  1 - List All Vehicles");
+            System.out.println("  2 - Search by Make/Model");
+            System.out.println("  3 - Search by Price range");
+            System.out.println("  4 - Search by Color");
+            System.out.println("  5 - Search by Mileage range");
+            System.out.println("  6 - Search by Type(Car,Truck,Van,SUV)");
+            System.out.println("  7 - Add a Vehicle");
+            System.out.println("  8 - Remove a Vehicle");
+            System.out.println("  9 - Quit");
             System.out.println("Enter your command:");
 
             // Read the user's input command.
@@ -39,21 +37,27 @@ public class VehicleInventory {
             // Use a switch statement to call the appropriate method based on the user's input command.
             switch (command) {
                 case 1:
-                    listAllVehicles();
+                    Dealership.getAllVehicles();
                     break;
                 case 2:
-                    findVehiclesByMakeModel(scanner);
+                    Dealership.getVehicleByMakeModel();
                     break;
                 case 3:
-                    findVehiclesByPrice(scanner);
+                    Dealership.getVehicleByYear();
                     break;
                 case 4:
-                    findVehiclesByColor(scanner);
+                    Dealership.getVehicleByColor();
                     break;
                 case 5:
-                    addVehicle(scanner);
+                    Dealership.getVehicleByMileage();
                     break;
                 case 6:
+                    Dealership.getVehicleByType();
+                    break;
+                case 7:
+                    Dealership.removeVehicle();
+                    break;
+                case 8:
                     // Display a message to the user and exit the program.
                     System.out.println("Goodbye!");
                     isDone = true;
@@ -73,13 +77,19 @@ public class VehicleInventory {
         if (numVehicles < vehicles.length) {
 
             // Prompt user to enter vehicle ID and read the input
-            System.out.print("Enter vehicle ID: ");
-            long id = scanner.nextLong();
+            System.out.print("Enter vehicle Vin: ");
+            int vin  = scanner.nextInt();
+            scanner.nextLine(); // Consume new line character
+            System.out.print("Enter vehicle Year: ");
+            int year  = scanner.nextInt();
             scanner.nextLine(); // Consume new line character
 
             // Prompt user to enter make and model of the vehicle and read the input
             System.out.print("Enter make and model: ");
             String makeModel = scanner.nextLine();
+
+            System.out.print("Enter Vehicle Type: ");
+            String vehicleType = scanner.nextLine();
 
             // Prompt user to enter color of the vehicle and read the input
             System.out.print("Enter color: ");
@@ -91,10 +101,10 @@ public class VehicleInventory {
 
             // Prompt user to enter price of the vehicle and read the input
             System.out.print("Enter price: ");
-            float price = scanner.nextFloat();
+            double price = scanner.nextDouble();
 
             // Create a new Vehicle object with the input values
-            Vehicle newVehicle = new Vehicle(id, makeModel, color, odometerReading, price);
+            Vehicle newVehicle = new Vehicle(vin, year, makeModel,vehicleType, color, odometerReading, price,);
 
             // Add the new Vehicle object to the inventory array and increment the number of vehicles counter
             vehicles[numVehicles] = newVehicle;

@@ -9,6 +9,11 @@ public class Dealership {
     private String address;
     private String phone;
     private ArrayList<Vehicle> inventory;
+    // Initialize an array of Vehicle objects with a maximum size of 20.
+    private static Vehicle[] vehicles = new Vehicle[20];
+
+    // The number of vehicles currently stored in the vehicles array.
+    private static int numVehicles = 6;
 
     //Constructor
 
@@ -44,21 +49,22 @@ public class Dealership {
     public void setPhone(String phone) {
         this.phone = phone;
     }
-    // Methods
-    public List<Vehicle> getVehiclesByPrice(double min, double max){
+    // Derived getters//Methods
+    public static List<Vehicle> getVehiclesByPrice(double min, double max){
         return inventory;
     }
-    public List<Vehicle> getVehicleByMileage(int min, int max){ return  null;}
-    public List<Vehicle> getVehicleByYear(int min, int max){return  null;}
-    public List<Vehicle> getVehicleByMakeModel(String make, String model){return null;}
-    public List<Vehicle> getVehicleByColor(String color){return null;}
-    public List<Vehicle> getVehicleByType(String vehicleType){return null;}
-    public List<Vehicle> getAllVehicles(){
+    public static List<Vehicle> getVehicleByMileage(int min, int max){ return  null;}
+    public static List<Vehicle> getVehicleByYear(int min, int max){return  null;}
+    public static List<Vehicle> getVehicleByMakeModel(String make, String model){return null;}
+    public static List<Vehicle> getVehicleByColor(String color){return null;}
+    public static List<Vehicle> getVehicleByType(String vehicleType){return null;}
+    public static List<Vehicle> getAllVehicles(){
         return inventory;
     }
     // Helper Methods
-    public void addVehicle(Vehicle vehicle){
-        inventory.add(vehicle);
+    public  void addVehicle(Vehicle vehicle){
+            // Create a new inventory object with the input parameter
+            inventory.add(vehicle);
     }
-    public void removeVehicle(Vehicle vehicle){}
+    public static void removeVehicle(Vehicle vehicle){}
 }
