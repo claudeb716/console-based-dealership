@@ -17,6 +17,10 @@ public class Dealership {
 
     //Constructor
 
+    public Dealership() {
+        this.inventory = new ArrayList<>();
+    }
+
     public Dealership(String name, String address, String phone) {
         this.name = name;
         this.address = address;
@@ -51,18 +55,18 @@ public class Dealership {
     }
     // Derived getters//Methods
     public static List<Vehicle> getVehiclesByPrice(double min, double max){
-        return inventory;
+        return;
     }
-    public static List<Vehicle> getVehicleByMileage(int min, int max){ return  null;}
-    public static List<Vehicle> getVehicleByYear(int min, int max){return  null;}
-    public static List<Vehicle> getVehicleByMakeModel(String make, String model){return null;}
-    public static List<Vehicle> getVehicleByColor(String color){return null;}
-    public static List<Vehicle> getVehicleByType(String vehicleType){return null;}
+    public static List<Vehicle> getVehicleByMileage(int min, int max){ return min, max;}
+    public static List<Vehicle> getVehicleByYear(int min, int max){return min, max;}
+    public static List<Vehicle> getVehicleByMakeModel(String make, String model){return make, model}
+    public static List<Vehicle> getVehicleByColor(String color){return color;}
+    public static List<Vehicle> getVehicleByType(String vehicleType){return vehicleType;}
     public static List<Vehicle> getAllVehicles(){
-        return inventory;
+        return this.inventory;
     }
     // Helper Methods
-    public  void addVehicle(Vehicle vehicle){
+    public void addVehicle(Vehicle vehicle){
             // Create a new inventory object with the input parameter
             inventory.add(vehicle);
     }
