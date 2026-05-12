@@ -17,9 +17,9 @@ public class DealershipFileManager {
 
         try (BufferedReader br = new BufferedReader(new FileReader(inventory))) {
             // create dealership  from first line of file
-            String firstline = br.readLine();
+            String firstLine = br.readLine();
             //Initialize( new dealership)
-            String[] parts = firstline.split("\\|");
+            String[] parts = firstLine.split("\\|");
             ds = new Dealership(parts[0], parts[1], parts[2]);
             // Loop Vehicles only
             String line;
