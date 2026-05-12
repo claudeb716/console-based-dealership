@@ -1,10 +1,11 @@
 package com.pluralsight;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class UserInterface {
     // Attributes
-    Dealership dealership = new Dealership();
+    Dealership dealership = new Dealership("D&B","111 Old Benbrook Rd", "817-398-8333");
 
     //Constructor
 
@@ -13,7 +14,7 @@ public class UserInterface {
     // Derived getters/Methods
     public void display(){
         // call method to load dealership
-        DealershipFileManager.getDealership();
+        init();
 
         // Create a Scanner object to read user input.
         Scanner scanner = new Scanner(System.in);
@@ -82,13 +83,27 @@ public class UserInterface {
         }
 
     }
+    private void init(){
+        DealershipFileManager dfm = new DealershipFileManager();
+        this.dealership = dfm.getDealership();
+    }
+    // Private helper Methods
+    private void displayVehicles(ArrayList<Vehicle> vehicles ){
+        for (Vehicle v : vehicles){
+            System.out.println(v);
+        }
+    }
+
     public void processGetByPriceRequest(){}
     public void processGetByMakeModelRequest(){}
     public void processGetByYearRequest(){}
     public void processGetByColorRequest(){}
     public void processGetByMileageRequest(){}
     public void processGetByVehicleTypeRequest(){}
-    public void processGetAllVehiclesRequest(){}
+    public void processGetAllVehiclesRequest(){
+       ArrayList<Vehicle> vehicles = this.dealership.getAllVehicles();
+        displayVehicles(vehicles);
+    }
     public void processAddVehicleRequest(){}
     public void processRemoveVehicleRequest(){}
 }
