@@ -1,6 +1,7 @@
 package com.pluralsight;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class Dealership {
     //Attributes
@@ -48,6 +49,13 @@ public class Dealership {
     }
     // Derived getters//Methods
     public ArrayList<Vehicle> getVehiclesByPrice(double min, double max){
+        for (Vehicle v : inventory){
+            if (v.getPrice() == min) {
+                return this.inventory;
+            } else if (v.getPrice() == max) {
+                return this.inventory;
+            }
+        }
         return this.inventory;
     }
     public ArrayList<Vehicle> getVehicleByMileage(int min, int max){
